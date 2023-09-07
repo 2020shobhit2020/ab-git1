@@ -1,0 +1,24 @@
+{
+	"name": "ErrorRowHandleDataFlow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "salesINDdataset",
+						"type": "DatasetReference"
+					},
+					"name": "salesIND"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> salesIND"
+			]
+		}
+	}
+}
