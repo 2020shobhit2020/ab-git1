@@ -13,17 +13,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "ConditionalSplit"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> salesIND",
-				"salesIND split(ERROR_FUNCTION(''),",
-				"     disjoint: false) ~> ConditionalSplit@(errorrows, )"
+				"     ignoreNoFilesFound: false) ~> salesIND"
 			]
 		}
 	}
