@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/c98f771e-214d-4c3e-ac95-31fbd563bd0d/resourceGroups/ab_test/providers/Microsoft.Storage/storageAccounts/abstorageaccount12345"
 		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/c98f771e-214d-4c3e-ac95-31fbd563bd0d/resourceGroups/ab_test/providers/Microsoft.Storage/storageAccounts/abstorageaccount12345"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -54,6 +58,9 @@
 					},
 					"ab-trigger_properties_typeProperties_scope": {
 						"value": "[parameters('ab-trigger_properties_typeProperties_scope')]"
+					},
+					"trigger1_properties_typeProperties_scope": {
+						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
 					}
 				}
 			},
