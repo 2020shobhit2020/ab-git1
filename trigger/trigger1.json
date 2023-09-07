@@ -10,8 +10,7 @@
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/c98f771e-214d-4c3e-ac95-31fbd563bd0d/resourceGroups/ab_test/providers/Microsoft.Storage/storageAccounts/abstorageaccount12345",
 			"events": [
-				"Microsoft.Storage.BlobCreated",
-				"Microsoft.Storage.BlobDeleted"
+				"Microsoft.Storage.BlobCreated"
 			]
 		}
 	}
