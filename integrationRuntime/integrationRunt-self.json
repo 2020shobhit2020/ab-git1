@@ -1,0 +1,6 @@
+{
+	"name": "integrationRunt-self",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
