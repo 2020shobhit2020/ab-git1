@@ -1,0 +1,24 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ab-pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/ab-container/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/c98f771e-214d-4c3e-ac95-31fbd563bd0d/resourceGroups/ab_test/providers/Microsoft.Storage/storageAccounts/abstorageaccount12345",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
