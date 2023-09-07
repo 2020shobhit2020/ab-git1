@@ -21,6 +21,10 @@
 					"name": "sink1foroutput"
 				},
 				{
+					"dataset": {
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					},
 					"name": "sink2"
 				}
 			],
