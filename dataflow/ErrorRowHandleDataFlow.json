@@ -12,19 +12,44 @@
 					"name": "salesIND"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1foroutput"
+				},
+				{
+					"name": "sink2"
+				}
+			],
 			"transformations": [
 				{
 					"name": "ConditionalSplit",
-					"description": "conditionalsplit"
+					"description": "conditional split"
 				}
 			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          saleDate as string,",
+				"          saleItem as string,",
+				"          country as string,",
+				"          quantity as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> salesIND",
-				"salesIND split(isNull(toDate(saledate,'dd-mm-yyyy')),",
-				"     disjoint: false) ~> ConditionalSplit@(ErrorRows, CorrectRows)"
+				"salesIND split(isNull(toDate(saleDate, 'dd-mm-yyyy')),",
+				"     disjoint: false) ~> ConditionalSplit@(ErrorRows, CorrectRows)",
+				"ConditionalSplit@ErrorRows sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1foroutput",
+				"ConditionalSplit@CorrectRows sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink2"
 			]
 		}
 	}

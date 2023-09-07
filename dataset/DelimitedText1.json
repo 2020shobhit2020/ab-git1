@@ -1,5 +1,5 @@
 {
-	"name": "salesINDdataset",
+	"name": "DelimitedText1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage2",
@@ -10,31 +10,13 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "salesIND_2020_MAY_01.csv",
-				"container": "globalsales"
+				"container": "outputwrong"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "saleDate",
-				"type": "String"
-			},
-			{
-				"name": "saleItem",
-				"type": "String"
-			},
-			{
-				"name": "country",
-				"type": "String"
-			},
-			{
-				"name": "quantity",
-				"type": "String"
-			}
-		]
+		"schema": []
 	}
 }
