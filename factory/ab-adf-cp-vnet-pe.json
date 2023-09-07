@@ -1,0 +1,9 @@
+{
+	"name": "ab-adf-cp-vnet-pe",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "dfc8a65f-05ba-49ee-bb21-ce205e7b0346",
+		"tenantId": "76a2ae5a-9f00-4f6b-95ed-5d33d77c4d61"
+	}
+}
