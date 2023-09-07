@@ -354,7 +354,7 @@
 						"     allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     ignoreNoFilesFound: false) ~> salesIND",
-						"salesIND split(!isNull(toDate(saleDate, 'dd-mm-yyyy')),",
+						"salesIND split(isNull(toDate(saleDate, 'dd-MMM-yyyy')),",
 						"     disjoint: false) ~> ConditionalSplit@(ErrorRows, CorrectRows)",
 						"ConditionalSplit@ErrorRows sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
