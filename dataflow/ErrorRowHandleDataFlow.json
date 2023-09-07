@@ -15,14 +15,15 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "ConditionalSplit"
+					"name": "ConditionalSplit",
+					"description": "conditionalsplit"
 				}
 			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> salesIND",
-				"salesIND split(ERROR_FUNCTION(''),",
+				"salesIND split(isNull(toDate(saledate,'dd-mm-yyyy')),",
 				"     disjoint: false) ~> ConditionalSplit@(ErrorRows, CorrectRows)"
 			]
 		}
